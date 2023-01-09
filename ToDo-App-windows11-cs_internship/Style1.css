@@ -1,0 +1,379 @@
+:root {
+  --dark: #374151;
+  --darker: #373f4971;
+  --darkest: #6b6b6b3f;
+  --gray: #8e95a2b0;
+  --light: rgba(255, 255, 255, 0.599);
+  --Petroleum: #0080ff;
+  --yellow: #ffcc00;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  height: 6%;
+  display: grid;
+  color: rgba(255, 255, 255, 0.899);
+  background-color: rgb(25, 25, 25);
+}
+
+.header div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.window div {
+  align-items: center;
+  padding: 20px;
+}
+
+.close:hover {
+  background: #ff0000;
+}
+
+.min:hover {
+  background: #2a2a2a6d;
+}
+
+.max:hover {
+  background: #2a2a2a6d;
+}
+
+.main1 {
+  height: 94%;
+  display: grid;
+  background-color: rgb(25, 25, 25);
+  grid-template-columns: 240px minmax(320px, 100%);
+}
+
+.Right {
+  background: url(img/Canada.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px 0px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.Left {
+  margin: 10px;
+}
+
+.Search {
+  border: 0px solid rgba(255, 255, 255, 0.325);
+  border-left-width: 3px;
+  color: #c8c8c8c5;
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  height: 38px;
+  margin: 1px;
+  margin-bottom: 2px;
+  font-size: 18px;
+  padding: 8px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.Search:hover {
+  background: #2a2a2a6d;
+  border-bottom-width: 1px;
+  border-radius: 3px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  border-radius: 15px;
+  color: rgba(255, 255, 255, 0.685);
+  height: 38px;
+  margin: 3px;
+  margin-bottom: 3px;
+  font-size: 16px;
+  padding: 9px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.items:hover {
+  background: #2a2a2a6d;
+}
+
+.items1 {
+  margin-top: 15px;
+  font-size: 18px;
+  color: rgb(90, 90, 90);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.685);
+}
+
+.Day {
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.779);
+  margin-left: 60px;
+  margin-top: 50px;
+}
+
+.History {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.725);
+  margin-left: 63px;
+  margin-top: 4px;
+}
+
+#new-task-form {
+  display: flex;
+}
+
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+#new-task-input {
+  flex: 0.7 1 0%;
+  background-color: var(--darker);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  margin-left: 4rem;
+  margin-top: 1.35rem;
+  color: var(--light);
+  font-size: 1.15rem;
+}
+
+#new-task-input::placeholder {
+  color: var(--gray);
+}
+
+#new-task-submit {
+  color: var(--Petroleum);
+  font-size: 1.24rem;
+  margin-right: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 800;
+  background-image: linear-gradient(to right, var(--yellow), var(--Petroleum));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#new-task-submit:hover {
+  opacity: 0.8;
+}
+
+#new-task-submit:active {
+  opacity: 0.6;
+}
+
+main {
+  flex: 1 1 0%;
+  padding: 0.15rem 1rem;
+  max-width: 800px;
+  /* width: 100%; */
+  margin: 0 auto;
+  margin-left: 2.5rem;
+}
+
+.task-list {
+  padding: 1rem;
+}
+
+.task-list h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--darkest);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  width: 85%;
+}
+
+.task .content {
+  flex: 1 1 0%;
+}
+
+.content .text {
+  color: rgba(255, 255, 255, 0.461);
+  font-size: 1rem;
+  counter-reset: var(--light);
+  font-weight: 1.125rem;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.text:not(:read-only) {
+  color: var(--yellow);
+}
+
+.actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.actions button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.actions button:hover {
+  opacity: 0.8;
+}
+
+.actions button:active {
+  opacity: 0.6;
+}
+
+.edit {
+  background-image: linear-gradient(to right, var(--yellow), var(--Petroleum));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.delete {
+  color: crimson;
+}
+
+#menu_checkbox {
+  display: none;
+}
+
+label {
+  position: absolute;
+  top: 80px;
+  right: 60px;
+  left: 10px;
+  display: none;
+  width: 30px;
+  height: 25px;
+  transform: translateY(-50%);
+  transition: 0.3s ease transform;
+  cursor: pointer;
+}
+
+label div {
+  width: 6px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.549);
+  margin-left: 0;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  transition: 0.3s ease width, 0.3s ease margin-left, 0.3s ease margin-bottom,
+    0.3s ease background-color;
+}
+
+label div:first-child {
+  width: 22px;
+}
+
+label div:nth-child(2) {
+  width: 15px;
+}
+
+label div:last-child {
+  width: 30px;
+  margin-bottom: 0;
+}
+
+#menu_checkbox:checked+label {
+  transform: translateY(-50%) rotateZ(-90deg);
+}
+
+#menu_checkbox:checked+label div {
+  width: 6px;
+  margin-left: 12px;
+  margin-bottom: 3px;
+  background-color: #ffc107;
+}
+
+.item {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .Left {
+    display: none !important;
+  }
+
+  .main1 {
+    background-size: cover;
+    grid-template-columns: 100%;
+  }
+
+  label {
+    display: block;
+  }
+
+  .item {
+    display: flex;
+    border-radius: 9px;
+    color: rgba(255, 255, 255, 0.685);
+    height: 35px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    padding: 9px;
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  .item:hover {
+    background: #8a828245;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Left {
+    display: none !important;
+  }
+
+  .main1 {
+    background-size: cover;
+    grid-template-columns: minmax(100%, 320px);
+  }
+
+  .Day {
+    font-size: 35px;
+    margin-left: 55px;
+    margin-top: 43px;
+  }
+
+  .History {
+    font-size: 15px;
+    margin-left: 56px;
+    margin-top: 7px;
+  }
+}
