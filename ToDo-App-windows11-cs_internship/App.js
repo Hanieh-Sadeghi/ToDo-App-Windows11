@@ -75,3 +75,13 @@ window.addEventListener('load', () => {
 	});
 
 });
+
+let dayHistory = document.querySelector('.History');
+
+let today = new Date();
+let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+let formattedDate = today.toLocaleDateString('en-US', options);
+
+dayHistory.innerHTML = formattedDate;
+console.log(formattedDate);
+
