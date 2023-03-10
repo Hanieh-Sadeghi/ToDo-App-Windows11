@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../ToDo-App-Windows11"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ToDo-App-windows11-cs_internship"
+	}
+}
