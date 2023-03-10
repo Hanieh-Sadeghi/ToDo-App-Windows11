@@ -55,7 +55,7 @@ body {
 }
 
 .main1 {
-  height: 94%;
+  height: 96%;
   display: grid;
   background-color: rgb(25, 25, 25);
   grid-template-columns: 240px minmax(320px, 100%);
