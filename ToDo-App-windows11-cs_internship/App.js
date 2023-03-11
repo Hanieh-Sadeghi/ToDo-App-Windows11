@@ -1,87 +1,88 @@
 window.addEventListener('load', () => {
-	const form = document.querySelector("#new-task-form");
-	const input = document.querySelector("#new-task-input");
-	const listEl = document.querySelector("#tasks");
+    const form = document.querySelector("#new-task-form");
+    const input = document.querySelector("#new-task-input");
+    const listEl = document.querySelector("#tasks");
 
-	form.addEventListener('submit', (e) => {
-		e.preventDefault();
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-		const task = input.value;
+        const task = input.value;
 
-		if (!task) {
-			alert("please fill out the task");
-			return;
-		}
-		const taskEl = document.createElement('div'); // <div></div>
-		taskEl.classList.add('task'); // <div class="task"></div>
+        if (!task) {
+            alert("please fill out the task");
+            return;
+        }
+        const taskEl = document.createElement('div');
+        taskEl.classList.add('task');
 
-		const taskContent = document.createElement('div'); // <div></div>
-		taskContent.classList.add('content'); // <div class="content"></div>
+        const taskContent = document.createElement('div');
+        taskContent.classList.add('content');
 
-		taskEl.appendChild(taskContent);
+        taskEl.appendChild(taskContent);
 
-		const taskInput = document.createElement('input'); // <input>
-		taskInput.classList.add('text'); // <input class=text>
-		taskInput.type = 'text'; // <input class=text type=text>
-		taskInput.value = task; // <input class=text type=text value=task>
-		taskInput.setAttribute('readonly', 'readonly');
+        const taskInput = document.createElement('input');
+        taskInput.classList.add('text');
+        taskInput.type = 'text';
+        taskInput.value = task;
+        taskInput.setAttribute('readonly', 'readonly');
 
-		taskContent.appendChild(taskInput);
+        taskContent.appendChild(taskInput);
 
-		const taskActions = document.createElement('div'); // <div></div>
-		taskActions.classList.add('actions');// <div class=action></div>
+        const taskActions = document.createElement('div');
+        taskActions.classList.add('actions');
 
-		const taskEdit = document.createElement('button');
-		taskEdit.classList.add('edit');
-		taskEdit.innerText = 'Edit';
+        const taskEdit = document.createElement('button');
+        taskEdit.classList.add('edit');
+        taskEdit.innerText = 'Edit';
 
-		const taskDelete = document.createElement('button');
-		taskDelete.classList.add('delete');
-		taskDelete.innerText = 'Delete';
+        const taskDelete = document.createElement('button');
+        taskDelete.classList.add('delete');
+        taskDelete.innerText = 'Delete';
 
-		taskActions.appendChild(taskEdit);
-		taskActions.appendChild(taskDelete);
+        taskActions.appendChild(taskEdit);
+        taskActions.appendChild(taskDelete);
 
-		taskEl.appendChild(taskActions);
+        taskEl.appendChild(taskActions);
 
-		listEl.appendChild(taskEl);
+        const taskCheckbox = document.createElement('input');
+        taskCheckbox.classList.add('checkbox');
+        taskCheckbox.type = 'checkbox';
 
-		input.value = '';
+        taskEl.insertBefore(taskCheckbox, taskContent);
 
-		taskEdit.addEventListener('click', (e) => {
-			if (taskEdit.innerText.toLowerCase() == "edit") {
-				taskEdit.innerText = "Save";
-				taskInput.removeAttribute("readonly");
-				taskInput.focus();
-			} else {
-				taskEdit.innerText = "Edit";
-				taskInput.setAttribute("readonly", "readonly"); //read 
-			}
-		});
+        listEl.appendChild(taskEl);
 
-		taskDelete.addEventListener('click', (e) => {
-			listEl.removeChild(taskEl);
-		});
+        input.value = '';
 
-		taskInput.addEventListener('change', (e) => {
-			if (e.target.checked) {
-				taskEl.classList.add('completed');
-			} else {
-				taskEl.classList.remove
-			}
-	
-		});
+        taskEdit.addEventListener('click', (e) => {
+            if (taskEdit.innerText.toLowerCase() == "edit") {
+                taskEdit.innerText = "Save";
+                taskInput.removeAttribute("readonly");
+                taskInput.focus();
+            } else {
+                taskEdit.innerText = "Edit";
+                taskInput.setAttribute("readonly", "readonly");
+            }
+        });
 
-	});
+        taskDelete.addEventListener('click', (e) => {
+            listEl.removeChild(taskEl);
+        });
 
+        taskCheckbox.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                taskEl.classList.add('completed');
+            } else {
+                taskEl.classList.remove('completed');
+            }
+        });
+    });
+
+    const dayHistory = document.querySelector('.History');
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = today.toLocaleDateString('en-US', options);
+
+    dayHistory.innerHTML = formattedDate;
+    console.log(formattedDate);
 });
-
-let dayHistory = document.querySelector('.History');
-
-let today = new Date();
-let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-let formattedDate = today.toLocaleDateString('en-US', options);
-
-dayHistory.innerHTML = formattedDate;
-console.log(formattedDate);
-
