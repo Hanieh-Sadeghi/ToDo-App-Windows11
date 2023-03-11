@@ -42,15 +42,14 @@
                 </form>
                 </header>
 
-
                 <main>
                     <section class="task-list">
                         <!-- <h2>Tasks</h2> -->
                         <div class="select">
                             <select name="todos" class="Tasks1">
-                                <option value="all">Tasks</option>
+                                <option value="all">Tasks </option>
                                 <option value="completed">Completed</option>
-                                <option value="incomplete">Incomplete</option>
+                                <option value="Active">Active</option>
                             </select>
                         </div>
                         <div id="tasks">
@@ -59,22 +58,15 @@
                                     <input type="text" class="text" value="A new task" readonly>
                                 </div>
                                 <div class="actions">
+                                    <input type="checkbox" class="checkbox">
                                     <button class="edit">Edit</button>
                                     <button class="delete">Delete</button>
-                                </div>
-                            </div> -->
+                                </div> -->
+                            </div>
                         </div>
                     </section>
-                    
-                    <template id="task-template">
-                        <div class="task">
-                            <input type="checkbox" id="task-checkbox" />
-                            <label for="task-checkbox">
-                                <span class="custom-checkbox"></span>
-                            </label>
-                        </div>
-                    </template>
                 </main>
+
 
                 <input type="checkbox" id="menu_checkbox">
                 <label for="menu_checkbox">
