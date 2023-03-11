@@ -96,11 +96,6 @@ window.addEventListener('load', () => {
 		});
 	});
 
-
-
-
-
-
 	const dayHistory = document.querySelector('.History');
 	const today = new Date();
 	const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
