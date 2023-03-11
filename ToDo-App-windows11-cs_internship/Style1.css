@@ -147,7 +147,6 @@ a {
 
 input,
 button {
-  appearance: none;
   border: none;
   outline: none;
   background: none;
@@ -336,40 +335,8 @@ label div:last-child {
 .item {
   display: none;
 }
-/* 
-.task .task-text {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 0.5rem;
-} */
 
-.custom-checkbox {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin-right: 3rem;
-  cursor: pointer;
-  border: 6px solid red;
-  border-radius: 50%;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  transition: -webkit-transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
-}
 
-/* .task:hover .custom-checkbox,
-[type="checkbox"]:focus + label .custom-checkbox {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  color: var(--clr-primary);
-}
-
-[type="checkbox"]:checked + label .custom-checkbox {
-  background: var(--clr-primary);
-  border-color: var(--clr-primary);
-  box-shadow: inset 0 0 0px 2px white;
-} */
 
 @media screen and (max-width: 720px) {
   .Left {
@@ -423,3 +390,23 @@ label div:last-child {
     margin-top: 7px;
   }
 }
+
+input[type=checkbox] {
+  transform: scale(1.2); 
+  margin-right: 10px; 
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  outline: none;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.completed {
+  text-decoration: line-through; 
+  color: var(--yellow); 
+}
+
+
