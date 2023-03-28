@@ -26,7 +26,7 @@ body {
 }
 
 .header {
-  height: 4%;
+  height: 30px;
   display: grid;
   color: rgba(255, 255, 255, 0.899);
   background-color: rgb(25, 25, 25);
@@ -55,7 +55,7 @@ body {
 }
 
 .main1 {
-  height: 96%;
+  height: 99%;
   display: grid;
   background-color: rgb(25, 25, 25);
   grid-template-columns: 240px minmax(320px, 100%);
@@ -134,7 +134,7 @@ a {
   margin-top: 50px;
 }
 
-.History {
+.history {
   font-size: 17px;
   color: rgba(255, 255, 255, 0.725);
   margin-left: 63px;
