@@ -55,7 +55,7 @@ window.addEventListener('load', () => {
 		input.value = '';
 
 		taskEdit.addEventListener('click', (e) => {
-			if (taskEdit.innerText.toLowerCase() == "edit") {
+			if (taskEdit.innerText.toLowerCase() === "edit") {
 				taskEdit.innerText = "Save";
 				taskInput.removeAttribute("readonly");
 				taskInput.focus();
