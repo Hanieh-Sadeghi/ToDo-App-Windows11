@@ -96,11 +96,11 @@ window.addEventListener('load', () => {
 		});
 	});
 
-	const dayHistory = document.querySelector('.History');
+	const dayhistory = document.querySelector('.history');
 	const today = new Date();
 	const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 	const formattedDate = today.toLocaleDateString('en-US', options);
 
-	dayHistory.innerHTML = formattedDate;
+	dayhistory.innerHTML = formattedDate;
 	console.log(formattedDate);
 });
