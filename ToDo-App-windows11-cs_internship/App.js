@@ -77,7 +77,7 @@ window.addEventListener('load', () => {
 			}
 		});
 	});
-	const select = document.querySelector(".Tasks1");
+	const select = document.querySelector(".tasks1");
 
 	select.addEventListener("change", function (e) {
 		const selectedOption = this.options[this.selectedIndex].value;
